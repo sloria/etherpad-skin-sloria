@@ -29,5 +29,8 @@ git clone https://github.com/sloria/etherpad-skin-sloria.git src/static/skins/sl
 This repo publishes a Docker image that is the same as the official Etherpad image, but with this skin installed and enabled by default.
 
 ```
-docker pull sloria/etherpad-lite
+docker run --name etherpad-sloria \
+  -p 9001:9001 \
+  -e SKIN_NAME=sloria \
+  etherpad-sloria
 ``` -->
