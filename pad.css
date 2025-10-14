@@ -1,0 +1,19 @@
+@import url("../colibris/pad.css");
+
+/* See colibris/pad.css for default values */
+:root {
+  --main-font-family: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --light-color: #f2f3f4;
+    --dark-color: #373737;
+    --super-dark-color: #282828;
+    ---color: var(--light-color);
+  }
+}
+
+h1 {
+  color: var(--text-color);
+}
