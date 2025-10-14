@@ -2,9 +2,9 @@
 
 A stripped-down skin for [Etherpad](https://github.com/ether/etherpad-lite).
 
-<img height="500" alt="Home page in light mode" src="https://github.com/user-attachments/assets/791f92ba-68ce-421e-9ad9-eca67e34a29f" />
-<img height="500" alt="Home page in light mode" src="https://github.com/user-attachments/assets/d6d57627-5e3e-4567-98d9-4f7a420c5ba3" />
-<img height="500" alt="Pad page in dark mode" src="https://github.com/user-attachments/assets/f4896511-3278-474f-bbe0-3da929def81c" />
+<img height="400" alt="Light mode" src="https://github.com/user-attachments/assets/0ce2b967-0730-418c-8f20-e048fd9a76f7" />
+<img height="400" alt="Dark mode" src="https://github.com/user-attachments/assets/242d93a0-9e4d-4af9-831d-1ba42c6dc4a9" />
+<img height="400" alt="Dark mode pad page" src="https://github.com/user-attachments/assets/3b1266eb-5a7d-4e5b-9895-8e2275c5b226" />
 
 It's based on the default colibris skin, with a few tweaks:
 

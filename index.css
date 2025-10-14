@@ -1,18 +1,16 @@
 :root {
-  --background-color: #fff;
+  --bg-color: #fff;
   --font: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   --text-color: #222;
-  --logo-color: #16a34a;
+  --primary-color: #008742; /* should match pad.css */
   --focus-color: #4d8aff;
 
-  --btn-generate-color: #2056b3;
-  --btn-generate-hover-color: #17408a;
-  --btn-open-color: #f3f2f2;
-  --btn-open-hover-color: #e0e0e0;
-
+  --btn-generate-hover-color: color-mix(in srgb, var(--primary-color), black 15%);
+  --btn-open-color: var(--bg-color);
+  --btn-open-hover-color: #e8e8e8;
 
   --border-color: #444;
-  --focus-color: #3b82f6;
+  --border-radius: 4px;  /* Match colibris */
 
   --input-padding-x: 0.7rem;
 
@@ -21,11 +19,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #1a1a1a;
+    --bg-color: #1a1a1a;
     --text-color: #e5e5e5;
-    --logo-color: #22c55e;
-    --btn-open-color: #373737;
-    --btn-open-hover-color: #525252;
+    --primary-color: #1b9949; /* should match pad.css */
+    --btn-open-hover-color: #282828;
     --border-color: #525252;
     --focus-color: #60a5fa;
   }
@@ -44,7 +41,7 @@ html {
 
 body {
   border-top: 0;
-  background: var(--background-color);
+  background: var(--bg-color);
   font-family: var(--font);
   font-size: 16px;
   display: flex;
@@ -60,7 +57,7 @@ nav {
   max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;
-  
+
   & h1 {
     margin: 0;
     font-size: 1.25rem;
@@ -72,10 +69,11 @@ nav {
 .logo-box {
   width: 2rem;
   height: 2rem;
-  background: var(--logo-color);
+  background: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: var(--border-radius);
 
   & svg {
     width: 1.25rem;
@@ -123,6 +121,7 @@ nav {
   box-shadow: unset;
   line-height: unset;
   font-weight: 600;
+  border-radius: var(--border-radius);
   text-transform: uppercase;
   padding: 1rem;
 }
@@ -130,7 +129,7 @@ nav {
 #button {
   font-size: 1em;
   letter-spacing: 0.05em;
-  background-color: var(--btn-generate-color);
+  background-color: var(--primary-color);
   color: white;
   border: none;
   width: 100%;
@@ -154,6 +153,7 @@ form {
   display: flex;
   width: 100%;
   font-size: 1em;
+  background: var(--bg-color);
 }
 
 #go2Name {
@@ -164,6 +164,7 @@ form {
 
   &:focus-within {
     border-color: var(--focus-color);
+    border-radius: var(--border-radius);
     box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
   }
 }
@@ -179,13 +180,15 @@ input#padname {
   font-weight: unset;
   border: 1px solid var(--border-color);
   border-right: none;
-  border-radius: 0;
-  background: var(--background-color);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  background: var(--bg-color);
   box-sizing: border-box;
   outline: none;
   width: 100%;
   flex: 1;
+  z-index: 2;
   padding: 0 var(--input-padding-x);
+  background-color: var(--bg-color);
 }
 
 #go2Name [type="submit"] {
@@ -193,7 +196,7 @@ input#padname {
   background-color: var(--btn-open-color);
   width: auto;
   border: 1px solid var(--border-color);
-  border-radius: 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
   padding: 0 var(--input-padding-x);
   display: flex;
   align-items: center;
@@ -230,6 +233,7 @@ input#padname {
 
     &:focus-within {
       border-color: unset;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
       box-shadow: unset;
     }
   }
@@ -237,6 +241,7 @@ input#padname {
   input#padname {
     border: 1px solid var(--border-color);
     border-bottom: none;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
     font-weight: normal;
 
     &:focus {
@@ -247,6 +252,7 @@ input#padname {
 
   #go2Name [type="submit"] {
     width: 100%;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
     padding: 0.5rem var(--input-padding-x);
   }
 }
