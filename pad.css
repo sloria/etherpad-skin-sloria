@@ -23,3 +23,10 @@
 h1 {
   color: var(--text-color);
 }
+
+/* Fixes ep_set_title_on_pad in dark mode */
+#pad_title input {
+  background: var(--bg-color);
+  color: var(--text-color);
+  border: none;
+}
