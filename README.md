@@ -39,7 +39,6 @@ This repo publishes a Docker image that is the same as the official Etherpad ima
 ```
 docker run --name etherpad-sloria \
   -p 9001:9001 \
-  -e SKIN_NAME=sloria
   ghcr.io/sloria/etherpad-skin-sloria:latest
 ```
 
@@ -52,7 +51,22 @@ services:
     container_name: etherpad
     ports:
       - 9001:9001
-    environment:
-      - SKIN_NAME=sloria
     image: ghcr.io/sloria/etherpad-skin-sloria:latest
 ```
+
+## Development
+
+Clone this repo.
+
+````
+git clone https://github.com/sloria/etherpad-skin-sloria.git
+cd etherpad-skin-sloria
+```
+
+Build and run the Docker image locally:
+
+```bash
+docker build -t etherpad-skin-sloria-dev . && docker run --rm -p 9001:9001 -e SKIN_NAME=sloria etherpad-skin-sloria-dev
+````
+
+View it in your browser at http://localhost:9001.
